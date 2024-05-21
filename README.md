@@ -13,11 +13,7 @@
    ```bash
    npm install 
    ```
-or 
 
- ```bash
-  yarn install
- ```
 
 **Set up environment variables: Rename .env.example to .env and fill in the required variables.**
 ```plaintext
