@@ -49,13 +49,14 @@ Create a meta developer account on sign in
 **Create Whatsapp Business Account [Learn more](https://developers.facebook.com/docs/development/create-an-app/). If you don't see an option to create a business app, select Other > Next > Business)***
 
 **Set Up WhatsApp Business Account**
-```text
+
 If you haven't already, set up a WhatsApp Business Account and connect it to your account.
-```
 
 **Get Phone Number ID**
+
 Navigate to your WhatsApp Business Account settings.
 Under the 'Phone Numbers' section, you will find the phone number you want to use. Note the Phone Number ID for this number.
 
 **You can navigate to your developer app dashboard>>Whatsapp>>API SETUP**
+
 All information needed for env is there, you can add and manage phone numbers.
