@@ -34,4 +34,8 @@ RECIPIENT_PHONE_NUMBER=<Recipient_phone_no>
 **Import and use environmental variebles**
 ```js
 import "dotenv/config";
+
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+const PHONE_NUMBER_ID = process.env.PHONE_NUMBER_ID;
+const RECIPIENT_PHONE_NUMBER = process.env.RECIPIENT_PHONE_NUMBER;
 ```
