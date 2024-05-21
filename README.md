@@ -60,3 +60,5 @@ Under the 'Phone Numbers' section, you will find the phone number you want to us
 **You can navigate to your developer app dashboard>>Whatsapp>>API SETUP**
 
 All information needed for env is there, you can add and manage phone numbers.
+
+![alt text](<src/middleware/Whatsap busines.jpg>)
