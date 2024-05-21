@@ -1,4 +1,5 @@
 # whatsapp_integrate
+A custom whatsapp utility to send whatsapp message
 
 ## Installation
 
