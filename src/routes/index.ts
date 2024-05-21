@@ -3,6 +3,6 @@ import { messageRoute } from "./whatsappUtility-route";
 
 const router = Router()
 
-router.use('message',messageRoute)
+router.use('/message',messageRoute)
 
 export {router as ApplicationRoute}
