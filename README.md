@@ -61,4 +61,4 @@ Under the 'Phone Numbers' section, you will find the phone number you want to us
 
 All information needed for env is there, you can add and manage phone numbers.
 
-![alt text](<src/middleware/Whatsap busines.jpg>)
+![alt text](<src/assets/Whatsap busines.jpg>)
