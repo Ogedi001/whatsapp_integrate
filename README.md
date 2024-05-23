@@ -1,5 +1,4 @@
 # whatsapp_integrate
-A custom whatsapp utility to send whatsapp message
 
 ## Installation
 
@@ -30,6 +29,7 @@ PORT=<port_number> //default 3000
 ACCESS_TOKEN=<Business_whatsapp_account_acess_token>
 PHONE_NUMBER_ID=<ID>
 RECIPIENT_PHONE_NUMBER=<Recipient_phone_no>
+BUSSINESS_ACCOUNT_ID=<Bussiness_acct_id"
 ```
 
 **Import and use environmental variebles**
@@ -39,6 +39,7 @@ import "dotenv/config";
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const PHONE_NUMBER_ID = process.env.PHONE_NUMBER_ID;
 const RECIPIENT_PHONE_NUMBER = process.env.RECIPIENT_PHONE_NUMBER;
+const BUSSINESS_ACCOUNT_ID = process.env.BUSSINESS_ACCOUNT_ID
 ```
 
 ## Adding a Number on Meta (Facebook) Side
@@ -63,3 +64,108 @@ Under the 'Phone Numbers' section, you will find the phone number you want to us
 All information needed for env is there, you can add and manage phone numbers.
 
 ![alt text](<src/assets/Whatsap busines.jpg>)
+
+
+## Documentation
+
+## Endpoints
+
+#### Send Message
+```plaintext
+POST http://localhost:3000/api/Message
+```
+**BODY**
+```json
+{
+    "message":"hello Shlup , how are you doing today"
+}
+```
+**Response**
+```json
+{
+    "message": "success",
+    "data": {
+        "messaging_product": "whatsapp",
+        "contacts": [
+            {
+                "input": "2348130088400",
+                "wa_id": "2348130088400"
+            }
+        ],
+        "messages": [
+            {
+                "id": "wamid.HBgNMjM0ODEzMDA4ODQwMBUCABEYEjVFQkE1Q0FBN0I3NjQ1OTMxNQA="
+            }
+        ]
+    }
+}
+```
+
+#### Create Message Template
+**N/B**
+##### Category must be either
+```plaintext
+AUTHENTICATION
+MARKETING
+UTILITY 
+```
+##### Template component contains, header, body, footer, and buttons.  only 'body' must be provided, others are optional
+##### buttons is an array; you can have more than one of the  required button type
+```plaintext
+PHONE_NUMBER
+URL 
+QUICK_REPLY
+```
+##### If button is type URL; url field must be included, if type is PHONE_NUMBER; phone_number must be included.
+#### QUICK_REPLY required only type and text field
+
+
+**Request**
+```plaintext
+POST http://localhost:3000/api/Message/create_template_message
+```
+**BODY**
+```json
+{
+    "name":"promo",
+    "category":"MARKETING",
+    "payload":{
+        "header":"Season Greetings",
+        "body":"This is one in a million offer",
+        "footer":"your number 1",
+        "buttons":[
+        {
+            "type":"PHONE_NUMBER",
+            "text":"Call Me",
+            "phone_number": 2348122299999
+        },
+        {
+            "type":"URL",
+            "text":"visit our URL",
+            "url":"https://www.google.com"
+        },
+         {
+            "type": "QUICK_REPLY",
+            "text": "Unsubscribe from Promos"
+        },
+        {
+           "type":"QUICK_REPLY",
+           "text": "Unsubscribe from All"
+       }
+        ]
+    }
+}
+```
+**Response**
+```json
+{
+    "message": "Template created successfully",
+    "data": {
+        "id": "2704370109717763",
+        "status": "PENDING",
+        "category": "MARKETING"
+    }
+}
+```
+
+
